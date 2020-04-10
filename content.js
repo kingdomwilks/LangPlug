@@ -41,7 +41,7 @@ function replaceText (node, aqaSpanish) {
 
       //Regex passing in a variable instead of String
       var change = "regex"
-      var regexFunction = new RegExp(change, "gi")
+      var regexFunction = new RegExp(change, "g")
 
           //If statement - If value matches spacedEnglishWord
           //Wasn't working so added value definition locally to try
