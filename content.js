@@ -1,4 +1,11 @@
-const edexcelSpanish = {
+const spanishAQAGCSE = {
+  "Earthquake":"terremoto",
+  "Freshwater":"aqua dulce",
+  "Saltwater":"agua salada"
+}
+
+const spanishEdexcelGCSE = {
+  spanishAQAGCSE,
   "week": "semana",
   "welcome": "Bienvenidos",
   "weekend": "fin de semana",
@@ -36,7 +43,6 @@ const edexcelSpanish = {
   "Spaghetti":"espaguetis",
   "Tablecloth":"mantel",
   "Vanilla":"vainilla",
-  "":"",
   "Artichoke":"alcachofa",
   "Beer from the tap":"cerveza de barril",
   "Bitter":"amargo",
@@ -50,8 +56,6 @@ const edexcelSpanish = {
   "Tray":"bandeja",
   "Turkey":"pavo",
   "Well-cooked":"bien cocido",
-  "":"",
-  "":"",
   "Boxer shorts":"calzoncillos",
   "Bra":"sostén",
   "Bracelet":"brazalete",
@@ -68,13 +72,11 @@ const edexcelSpanish = {
   "Jumper":"jersey",
   "Tights":"medias",
   "Wool":"de lana",
-  "":"",
   "Cardigan":"rebeca",
   "Dressing gown":"bata",
   "Dyed":"teñido",
   "Tight":"ajustado",
-  "Velvet":"(de)terciopelo",
-  "":"",
+  "Velvet":"de terciopelo",
   "Adventurous":"Atrevido",
   "Beautiful":"Precioso",
   "Block of flats":"Bloque de pisos",
@@ -97,7 +99,6 @@ const edexcelSpanish = {
   "Unemployed":"desempleado",
   "Unbearable":"insoportable",
   "Untidy":"desordenado",
-  "":"",
   "Acquiantance":"conocido",
   "Adopted":"adoptado",
   "Annoying":"irritante",
@@ -115,15 +116,12 @@ const edexcelSpanish = {
   "Spot":"grano",
   "Stubborn":"terco",
   "Underage":"menor de edad",
-  "":"",
-  "":"",
   "Climbing":"escalada en roca",
   "Body building":"culturismo",
   "Folk music":"música folklórica",
   "Good Friday":"Viernes Santo",
   "Games console":"consola de juegos",
   "Hobby":"pasatiempo",
-  "Nightclub":"club nocturno",
   "Orchestra":"orquesta",
   "Parachuting":"salto con paracaídas",
   "Pocket money":"dinero de bolsillo",
@@ -131,7 +129,6 @@ const edexcelSpanish = {
   "Saxophone":"saxófono",
   "Soap opera":"telenovela",
   "Trampolining":"cama elástica",
-  "":"",
   "Archery":"tiro con arco",
   "Board game":"juego de mesa",
   "Cable":"televisión por cable",
@@ -145,12 +142,10 @@ const edexcelSpanish = {
   "Sailing boat":"barco",
   "Scuba diving":"submarinismo",
   "Subtitles":"subtítulos",
-  "Viewer":"audiencia(f)",
-  "":"",
+  "Viewer":"audiencia",
   "Art gallery":"galería de arte",
   "Bed linen":"ropa de cama",
   "B&B":"pensión",
-  "":"",
   "Caravan":"caravana",
   "Train carriage":"vagón",
   "Diversion":"desvío",
@@ -175,7 +170,6 @@ const edexcelSpanish = {
   "Toothbrush":"cepillo de dientes",
   "Tour":"gira",
   "Shop":"escaparate",
-  "":"",
   "Dry cleaners":"tintorería",
   "Dry cleaning":"limpieza en seco",
   "Event":"acontecimiento",
@@ -185,9 +179,6 @@ const edexcelSpanish = {
   "Package holiday":"viaje organizado",
   "Parade":"desfile",
   "Registration":"inscripción",
-  "Toll":"peaje",
-  "":"",
-  "":"",
   "Dry":"seco",
   "cloud":"nube",
   "Customer service":"información",
@@ -201,10 +192,8 @@ const edexcelSpanish = {
   "Wallet":"billetero",
   "Crash":"choque",
   "Wrong number":"número equivocado",
-  "":"",
   "Achievement":"éxito",
   "Answer":"respuesta",
-  "":"",
   "Canteen":"cantina",
   "Caretaker":"conserje",
   "Changing room":"vestuario",
@@ -218,13 +207,10 @@ const edexcelSpanish = {
   "Fountain pen":"pluma",
   "Glue":"goma de pegar",
   "Page":"página",
-  "":"",
   "Projector":"proyector",
-  "":"",
   "School trip":"excursión del colegio",
   "Subject":"asignatura",
   "Summer holidays":"vacaciones del verano",
-  "":"",
   "Boarding school":"internado",
   "Answerphone":"contestador automático",
   "Baker":"panadero",
@@ -247,43 +233,40 @@ const edexcelSpanish = {
   "Salesperson":"representante de ventas",
   "Salary":"salario",
   "Sewing":"costura",
-  "":"",
   "Fundraiser":"venta benéfica",
   "Database":"base de datos",
   "Enclosed":"adjunto",
   "Internship":"internado",
   "vacancy":"anuncio de trabajo",
   "Qualification":"título",
-  "Foundation":"",
   "Disaster":"desastre",
   "Flood":"inundaciónes",
   "Rainforest":"selva tropical",
   "War":"guerra",
-  "":"",
   "Earthquake":"terremoto",
   "Freshwater":"aqua dulce",
-  "Saltwater":"agua salada"
+  "Saltwater":"agua salada",
 }
 
 var elementsInsideBody = [...document.body.getElementsByTagName('*')];
 
 //Function to review DOM elements
-function findAndReplace(edexcelSpanish){
+function findAndReplace(spanishEdexcelGCSE){
   elementsInsideBody.forEach(element =>{
     element.childNodes.forEach(child =>{
       if(child.nodeType === 3){
-        replaceText(child, edexcelSpanish);
+        replaceText(child, spanishEdexcelGCSE);
         console.log('replaced');
       }
     });
   });
 }
 
-function replaceText (node, edexcelSpanish) {
+function replaceText (node, spanishEdexcelGCSE) {
   let value = node.nodeValue;
 
-  let spanish = Object.keys(edexcelSpanish);
-  let english = Object.values(edexcelSpanish);
+  let spanish = Object.keys(spanishEdexcelGCSE);
+  let english = Object.values(spanishEdexcelGCSE);
 
   for (var i = 0; i < spanish.length; i++) {
 
@@ -306,8 +289,19 @@ function replaceText (node, edexcelSpanish) {
   }
 } 
 
+
 //When Window loads call the function. 
-window.onload = findAndReplace(edexcelSpanish);
+window.onload = findAndReplace(spanishEdexcelGCSE);
+window.onload = highlight(testWord);
+
+/* How to highlight changed words & show hover to translation
+
+function highlight(node, text) {
+  var innerHTML = node.innerHTML;
+   innerHTML = innerHTML.substring(0,index) + "<span class='highlight'>" + innerHTML.substring(index,index+text.length) + "</span>" + innerHTML.substring(index + text.length);
+  node.innerHTML = innerHTML;
+
+  highlight(child, testWord)
 
 
 

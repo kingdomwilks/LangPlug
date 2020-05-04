@@ -1,16 +1,52 @@
+<link rel="stylesheet" type="text/css" href="sheet.css">
+<link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
 <html>
+    
     <head>
       <title>Seneca - Learn Languages</title>
     </head>
     <body>
-        <select>
-            <option value="Spanish">Spanish</option>
-            <option value="French">French</option>
-        </select>
-        <select>
-            <option value="KS3">KS3</option>
-            <option value="AQA GCSE">AQA GCSE</option>
-            <option value="Edexcel GCSE">Edexcel GCSE</option>
-        </select>
+        <div class="main-container">
+            <img class="logo" src="Logo1Seneca.png" height="100px" width="100px">
+            <h2>We only support Spanish AQA GCSE at the moment!</h1>
+        </div>
     </body>
   </html>
+
+  <!--
+
+    For supporting user choices & messaging later
+    //For popup.html
+    <select>
+            <option value="Spanish KS3" onclick="selectLanguage('spanishKS3')">Spanish KS3</option>
+            <option value="Spanish AQA GCSE"onclick="selectLanguage('spanishAQAGCSE')">Spanish AQA GCSE</option>
+            <option value="Spanish Edexcel GCSE" onclick="selectLanguage('spanishEdexcelGCSE')">Spanish Edexcel GCSE</option>
+            <option value="French KS3" onclick="selectLanguage('frenchKS3')">French KS3</option>
+            <option value="French AQA GCSE" onclick="selectLanguage('frenchAQAGCSE')">French AQA GCSE</option>
+            <option value="French Edexcel GCSE" onclick="selectLanguage('frenchEdexcelGCSE')">French Edexcel GCSE</option>
+    </select>
+
+    <script 
+    type="text/javascript"
+    src="popup.js"
+    >
+    </script>   
+    
+    //For background.js
+    chrome.runtime.onMessage.addListener(function(message, sender, reply) {
+    if (message.language === 'spanishAQAGCSE'){
+        let chosenVariable = spanishAQAGCSE
+    }
+    if (message.language === 'spanishEdexcelGCSE'){
+        let chosenVariable = spanishEdexcelGCSE
+    }
+});
+
+    //For popup.js
+function selectLanguage(language) {
+    chrome.runtime.sendMessage({language: language},
+)
+};
+    //Manifest.json - Need to add the background scripts if want to use background.js
+
+  -->
